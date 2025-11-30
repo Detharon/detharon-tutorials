@@ -68,7 +68,7 @@ public class CliRandom {
                 .longOpt(MIN)
                 .type(Number.class)
                 .hasArg()
-                .build();
+                .get();
     }
 
     private static Option getMaxOption() {
@@ -76,7 +76,7 @@ public class CliRandom {
                 .longOpt(MAX)
                 .type(Number.class)
                 .hasArg()
-                .build();
+                .get();
     }
 
     private static Option getRandomClassOption() {
@@ -85,7 +85,7 @@ public class CliRandom {
                 .longOpt("class")
                 .type(Object.class)
                 .hasArg()
-                .build();
+                .get();
     }
 
     private static Option getNumberOfResultsOption() {
@@ -93,7 +93,7 @@ public class CliRandom {
                 .longOpt("numbers")
                 .type(Number.class)
                 .hasArg()
-                .build();
+                .get();
     }
 
     private static Option getSeedOption() {
@@ -102,6 +102,6 @@ public class CliRandom {
                 .longOpt("seed")
                 .type(Number.class)
                 .hasArg()
-                .build();
+                .get();
     }
 }
