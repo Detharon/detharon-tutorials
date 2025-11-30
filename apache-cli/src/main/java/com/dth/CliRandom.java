@@ -17,14 +17,14 @@ public class CliRandom {
         Options options = prepareOptions();
 
         try {
-            CommandLine commandLine = parser.parse(prepareOptions(), args);
+            CommandLine commandLine = parser.parse(options, args);
 
             // Getting required arguments
             int min = ((Number) commandLine.getParsedOptionValue(MIN)).intValue();
             int max = ((Number) commandLine.getParsedOptionValue(MAX)).intValue();
 
             // Getting optional arguments
-            Random random = ((Random) commandLine.getParsedOptionValue(RANDOM_CLASS));
+            Random random = (commandLine.getParsedOptionValue(RANDOM_CLASS));
             if (random == null) {
                 random = new Random();
             }
@@ -40,7 +40,7 @@ public class CliRandom {
             }
 
             for (int i = 0; i < numbers; i++) {
-                System.out.print(Math.round(random.nextInt(max)) + min);
+                System.out.print(random.nextInt(min) + (max - min));
                 if (i != numbers - 1) {
                     System.out.println();
                 }
